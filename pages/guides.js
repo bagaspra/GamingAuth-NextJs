@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from 'react';
 import styles from '../styles/Guides.module.css';
 import AuthContext from '../stores/authContext';
+import Head from 'next/head';
 
 export default function Guides() {
   const { user, authReady, login } = useContext(AuthContext);
@@ -36,29 +37,35 @@ export default function Guides() {
   }, [user, authReady]);
 
   return (
-    <div className={styles.guides}>
-      {!authReady && <div>Loading...</div>}
+    <>
+      <Head>
+        <title>Gaming Auth | Guides</title>
+        <meta name="keywords" content="bagas" />
+      </Head>
+      <div className={styles.guides}>
+        {!authReady && <div>Loading...</div>}
 
-      {error && (
-        <div className={styles.error}>
-          <p>{error}</p>
-        </div>
-      )}
-
-      {guides &&
-        guides.map((guide) => (
-          <div key={guide.title} className={styles.card}>
-            <h3>{guide.title}</h3>
-            <h4>written by {guide.author}</h4>
-            <p>
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. At
-              corrupti iste ab magnam dignissimos id maxime rerum quae minima.
-              Delectus maxime culpa est consequatur veritatis, perspiciatis cum
-              corrupti possimus quis?
-            </p>
+        {error && (
+          <div className={styles.error}>
+            <p>{error}</p>
           </div>
-        ))}
-    </div>
+        )}
+
+        {guides &&
+          guides.map((guide) => (
+            <div key={guide.title} className={styles.card}>
+              <h3>{guide.title}</h3>
+              <h4>written by {guide.author}</h4>
+              <p>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. At
+                corrupti iste ab magnam dignissimos id maxime rerum quae minima.
+                Delectus maxime culpa est consequatur veritatis, perspiciatis
+                cum corrupti possimus quis?
+              </p>
+            </div>
+          ))}
+      </div>
+    </>
   );
 }
 
