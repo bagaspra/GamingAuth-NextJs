@@ -1,12 +1,14 @@
-import styles from '../styles/Home.module.css'
+import styles from '../styles/Home.module.css';
 
 export default function Home() {
   return (
     <div className={styles.home}>
-       <h2>Welcome to Gaming Vibes</h2>
+      <h2>Welcome to Gaming House</h2>
       <div>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis deleniti rem aspernatur odit hic autem neque repellat alias? Debitis veniam inventore ipsum similique quos animi ipsa asperiores fuga dolor id. Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis deleniti rem aspernatur odit hic autem neque repellat alias? Debitis veniam inventore ipsum similique quos animi ipsa asperiores fuga dolor id. Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis deleniti rem aspernatur odit hic autem neque repellat alias? Debitis veniam inventore ipsum similique quos animi ipsa asperiores fuga dolor id.</p>
+        <p>To see guides content use this test account</p>
+        <p>email : bagas@gmail.com</p>
+        <p>pass : 123456</p>
       </div>
     </div>
-  )
+  );
 }
